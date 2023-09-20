@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('juries', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle');
+            $table->unsignedBigInteger('enseignants_id')->unsigned();
+            $table->foreign('enseignants_id')->references('id')->on('enseignants')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('maitre_stages_id')->unsigned();
+            $table->foreign('maitre_stages_id')->references('id')->on('maitre_stages')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('presidents_id')->unsigned();
+            $table->foreign('presidents_id')->references('id')->on('presidents')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('directeur_memoires_id')->unsigned();
+            $table->foreign('directeur_memoires_id')->references('id')->on('directeur_memoires')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
