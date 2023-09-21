@@ -12,7 +12,7 @@ class etudiant_controler extends Controller
      */
     public function index()
     {
-        //
+        return view('Etudiants.liste');
     }
 
     /**
@@ -20,7 +20,7 @@ class etudiant_controler extends Controller
      */
     public function create()
     {
-        //
+        return view('Etudiants.ajouter');
     }
 
     /**
@@ -28,7 +28,8 @@ class etudiant_controler extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $etudiants = etudiants::all();
+        return view('Etudiants.liste', compact('Etudiants.liste'));
     }
 
     /**

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\etudiant_controler;
+use App\Http\Controllers\demande_controler;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::resource('etudiants', etudiant_controler::class);
+
+Route::resource('demandes', demande_controler::class);
