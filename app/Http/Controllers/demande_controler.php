@@ -12,7 +12,7 @@ class demande_controler extends Controller
      */
     public function index()
     {
-        //
+        return view('Demandes.liste');
     }
 
     /**
@@ -20,7 +20,7 @@ class demande_controler extends Controller
      */
     public function create()
     {
-        //
+        return view('Demandes.ajouter');
     }
 
     /**
