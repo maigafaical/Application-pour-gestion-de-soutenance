@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class president_controler extends Controller
+class Maitre_stageController extends Controller
 {
     /**
      * Display a listing of the resource.

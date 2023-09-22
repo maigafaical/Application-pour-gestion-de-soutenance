@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class soutenance_controler extends Controller
+class EnseignantController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('Soutenances.liste');
+        //
     }
 
     /**
@@ -20,7 +20,7 @@ class soutenance_controler extends Controller
      */
     public function create()
     {
-        return view('Soutenances.ajouter');
+        //
     }
 
     /**

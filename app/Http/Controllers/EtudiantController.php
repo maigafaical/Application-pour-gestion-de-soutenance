@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class role_controler extends Controller
+class EtudiantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $etudiants = etudiant::all();
+        return view('Etudiants.liste', compact('etudiants'));
     }
 
     /**
@@ -20,7 +21,7 @@ class role_controler extends Controller
      */
     public function create()
     {
-        //
+        return view('Etudiants.ajouter');
     }
 
     /**
@@ -28,7 +29,25 @@ class role_controler extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+
+            'nom_prenom'=>'required',
+            'email'=>'required',
+            'adresse'=>'required',
+            'telephone'=>'required',
+
+        ]);
+
+        $etudiants = new etudiant();
+        $etudiants->nom = $request->nom;
+        $etudiants->prenom = $request->prenom;
+        $etudiants->adresse = $request->adresse;
+        $etudiants->telephone = $request->telephone;
+        $etudiants->save();
+
+        return redirect('Etudiants.liste')->with('status', 'L/etudiant a  été ajouté avec succes.');
+
     }
 
     /**

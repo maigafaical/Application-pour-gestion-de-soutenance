@@ -32,4 +32,6 @@ Route::resource('soutenances', soutenance_controler::class);
 
 Route::resource('juries', jury_controler::class);
 
+Route::resource('enseignants', EnseignantControler::class);
+
 
