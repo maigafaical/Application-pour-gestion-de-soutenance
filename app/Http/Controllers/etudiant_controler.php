@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\etudiant_controler_store;
+use App\Http\Controllers\etudiant_controler_index;
 use Illuminate\Http\Request;
+use App\Models\etudiant;
 
 class etudiant_controler extends Controller
 {
@@ -12,7 +15,8 @@ class etudiant_controler extends Controller
      */
     public function index()
     {
-        return view('Etudiants.liste');
+        $etudiants = etudiant::all();
+        return view('Etudiants.liste', compact('etudiants'));
     }
 
     /**
@@ -28,8 +32,25 @@ class etudiant_controler extends Controller
      */
     public function store(Request $request)
     {
-        $etudiants = etudiants::all();
-        return view('Etudiants.liste', compact('Etudiants.liste'));
+        
+        $request->validate([
+
+            'nom_prenom'=>'required',
+            'email'=>'required',
+            'adresse'=>'required',
+            'telephone'=>'required',
+            
+        ]);
+    
+        $etudiants = new etudiant();
+        $etudiants->nom = $request->nom;
+        $etudiants->prenom = $request->prenom;
+        $etudiants->adresse = $request->adresse;
+        $etudiants->telephone = $request->telephone;
+        $etudiants->save();
+    
+        return redirect('Etudiants.liste')->with('status', 'L/etudiant a  été ajouté avec succes.');
+       
     }
 
     /**
