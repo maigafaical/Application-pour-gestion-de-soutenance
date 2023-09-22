@@ -12,7 +12,7 @@ class soutenance_controler extends Controller
      */
     public function index()
     {
-        //
+        return view('Soutenances.liste');
     }
 
     /**
@@ -20,7 +20,7 @@ class soutenance_controler extends Controller
      */
     public function create()
     {
-        //
+        return view('Soutenances.ajouter');
     }
 
     /**
