@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\etudiant_controler;
 use App\Http\Controllers\demande_controler;
+use App\Http\Controllers\soutenance_controler;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/dashboard', function () {
 Route::resource('etudiants', etudiant_controler::class);
 
 Route::resource('demandes', demande_controler::class);
+
+Route::resource('soutenances', soutenance_controler::class);
+
