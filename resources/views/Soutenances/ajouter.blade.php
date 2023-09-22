@@ -6,7 +6,7 @@
     <nav>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="dashboard">Accueil</a></li>
-        <li class="breadcrumb-item active">Nouvelle inscription</li>
+        <li class="breadcrumb-item active">Nouvelle soutenance</li>
       </ol>
     </nav>
   </div>
@@ -18,73 +18,60 @@
       <div class="col-lg-12">
         <div class="row">
 
-          <!-- Formulaire inscription etudiant -->
+          <!-- Formulaire ajouter soutenance----->
 
           <div class="col-12">
             <div class="card recent-sales overflow-auto">
               <div class="card-body">
-                <h5 class="card-title">Inscription d'un étudiant </h5>
+                <h5 class="card-title">ajout d'une soutenance </h5>
 
               <form method="POST" action="{{route('etudiants.store')}}" class="row g-3">
-              <div class="col-md-12">
-                <label for="inputName5" class="form-label">Nom et Prénom</label>
-                <input type="text" class="form-control" name="nom_prenom">
+              <div class="col-md-6">
+                <label for="inputName5" class="form-label">Date</label>
+                <input type="date" class="form-control" name="date">
               </div>
 
               <div class="col-md-6">
-                <label for="inputEmail5" class="form-label">E-mail</label>
-                <input type="email" class="form-control" name="email">
+                <label for="inputEmail5" class="form-label">Heure</label>
+                <input type="text" class="form-control" name="heure">
               </div>
 
               <div class="col-md-6">
-                <label for="inputPassword5" class="form-label">Date de naissance</label>
-                <input type="date" class="form-control" name="date_naissance">
+                <label for="inputPassword5" class="form-label">Statut</label>
+                <input type="text" class="form-control" name="statut">
               </div>
 
-              <div class="col-6">
-                  <label for="inputAddress5" class="form-label">Sexe étudiant</label>
-                  <select name="sexe" class="form-select">
-                      <option>Choisir le sexe ...</option>
-                      <option value="Homme">Homme</option>
-                      <option value="Femme">Femme</option>
-                    </select>
-              </div>
+              <div class="col-md-6">
+                <label for="" class="form-label">Juries</label>
+                <select class="form-control" style="height: 38px; "  name="juries_id">
+                    <option>Selectionner un jury</option>
 
-              <div class="col-6">
-                <label for="inputAddress5" class="form-label">Téléphone étudiant</label>
-                <input type="number" class="form-control" name="phone_etudiant">
-              </div>
-
-
-              <div class="col-md-4">
-                <label for="inputCity" class="form-label">Téléphone parents</label>
-                <input type="number" class="form-control" name="phone_parents">
-              </div>
-
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Filière étudiant</label>
-                <select name="filiere" class="form-select">
-                  <option>Choisir la filière ...</option>
-                  <option>Informatique de Gestion</option>
-                  <option>Reseaux Informatique</option>
-                  <option>Comptabilité Générale</option>
-                  <option>Communication Digitale</option>
                 </select>
-              </div>
+            </div>
 
-              <div class="col-md-4">
-              <label for="inputState" class="form-label">Niveau étude</label>
-                  <select name="niveau" class="form-select">
-                      <option>Choisir le niveau ...</option>
-                      <option>1ere année</option>
-                      <option>2eme année</option>
-                      <option>3eme année</option>
-                      <option>4eme année</option>
-                      <option>5eme année</option>
-                      <option>6eme année</option>
-                      <option>7eme année</option>
-                  </select>
-              </div>
+            <div class="col-md-6">
+            <label for="" class="form-label">Salles</label>
+           <select class="form-control" style="height: 38px; "  name="salle_id">
+            <option>Selectionner une salle</option>
+
+        </select>
+        </div>
+
+        <div class="col-md-6">
+        <label for="" class="form-label">Demandes</label>
+        <select class="form-control" style="height: 38px; "  name="demandes_id">
+       <option>Selectionner une demande</option>
+
+       </select>
+        </div>
+
+        <div class="col-md-6">
+        <label for="" class="form-label">Users</label>
+        <select class="form-control" style="height: 38px; "  name="users_id">
+        <option>Selectionner un user</option>
+
+        </select>
+        </div>
 
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
@@ -96,7 +83,7 @@
 
             </div>
           </div>
-          <!-- End Formulaire inscription etudiant -->
+          <!-- End Formulaire ajouter soutenance---->
 
         </div>
       </div>
